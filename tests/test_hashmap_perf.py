@@ -1,7 +1,7 @@
 import timeit
 import random
 import string
-from src.hashmap import HashMap
+from src.hashmap_v2 import HashMap
 
 def generate_random_string(length):
     return ''.join(random.choice(string.ascii_letters) for _ in range(length))

@@ -56,4 +56,44 @@ Size      Operation HashMap        dict           built-in hash
 
 # v2
 
+For the 'set' operation:
+
+we modify the set() method for HashMap instead of item assignment.
+It still uses item assignment for the built-in dict.
+
+
+For the 'get' operation:
+
+we update the get() method for both HashMap and dict.
+For HashMap, it uses set() to populate the data structure before testing.
+
+
+For the 'delete' operation:
+
+It uses the delete() method for HashMap.
+It still uses del for the built-in dict.
+For HashMap, it uses set() to populate the data structure before testing.
+
+python3 -m tests.test_hashmap     
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
+
+python3 -m tests.test_hashmap_perf
+Size      Operation HashMap        dict           built-in hash  
+-----------------------------------------------------------------
+100       set       0.000147       0.000009       0.00026391702704131603
+100       get       0.000023       0.000005       N/A            
+100       delete    0.000044       0.000004       N/A            
+-----------------------------------------------------------------
+1000      set       0.001242       0.000060       0.0023848330602049828
+1000      get       0.000175       0.000031       N/A            
+1000      delete    0.000357       0.000029       N/A            
+-----------------------------------------------------------------
+10000     set       0.007723       0.000464       0.018800791003741324
+10000     get       0.001451       0.000288       N/A            
+10000     delete    0.003143       0.000239       N/A            
+-----------------------------------------------------------------
 

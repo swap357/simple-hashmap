@@ -1,5 +1,5 @@
 import unittest
-from src.hashmap import HashMap
+from src.hashmap_v2 import HashMap
 
 class TestHashMap(unittest.TestCase):
     def setUp(self):
