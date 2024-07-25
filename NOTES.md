@@ -31,13 +31,16 @@
 - https://stephenagrice.medium.com/how-to-implement-a-hash-table-in-python-1eb6c55019fd
 - https://ksvi.mff.cuni.cz/~dingle/2021-2/algs/notes_11.html
 
+```
 python3 -m tests.test_hashmap
 ......
 ----------------------------------------------------------------------
 Ran 6 tests in 0.002s
 
 OK
+```
 
+```
 python3 -m tests.test_hashmap_perf
 Size      Operation HashMap        dict           built-in hash  
 -----------------------------------------------------------------
@@ -53,34 +56,37 @@ Size      Operation HashMap        dict           built-in hash
 10000     get       0.012161       0.000310       N/A            
 10000     delete    0.021422       0.000245       N/A            
 -----------------------------------------------------------------
+```
 
 # v2
 
-For the 'set' operation:
+- 'set' operation:
 
 we modify the set() method for HashMap instead of item assignment.
 It still uses item assignment for the built-in dict.
 
 
-For the 'get' operation:
+- 'get' operation:
 
 we update the get() method for both HashMap and dict.
 For HashMap, it uses set() to populate the data structure before testing.
 
 
-For the 'delete' operation:
+- 'delete' operation:
 
 It uses the delete() method for HashMap.
 It still uses del for the built-in dict.
 For HashMap, it uses set() to populate the data structure before testing.
-
+```
 python3 -m tests.test_hashmap     
 ......
 ----------------------------------------------------------------------
 Ran 6 tests in 0.002s
 
 OK
+```
 
+```
 python3 -m tests.test_hashmap_perf
 Size      Operation HashMap        dict           built-in hash  
 -----------------------------------------------------------------
@@ -96,6 +102,7 @@ Size      Operation HashMap        dict           built-in hash
 10000     get       0.001451       0.000288       N/A            
 10000     delete    0.003143       0.000239       N/A            
 -----------------------------------------------------------------
+```
 
 # line by line profiling
 
